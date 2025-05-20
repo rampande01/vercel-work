@@ -416,6 +416,8 @@ students = [
     "marks": 32
   }
 ]
+from fastapi import Query
 
 @app.get("/api")
 async def get_marks(name: List[str] = Query(...)):
+
