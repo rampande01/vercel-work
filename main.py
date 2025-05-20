@@ -418,6 +418,4 @@ students = [
 ]
 
 @app.get("/api")
-async def get_marks(name: List[str]):
-    name_to_marks = {student["name"]: student["marks"] for student in students}
-    return {"marks": [name_to_marks.get(n, None) for n in name]}
+async def get_marks(name: List[str] = Query(...)):
